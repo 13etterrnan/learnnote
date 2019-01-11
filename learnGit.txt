@@ -1,4 +1,9 @@
-﻿初始化一个git仓库，使用git init
+﻿#分布式系统的好处：
+分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，
+而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就完成了同步，真是太方便了！
+
+#创建仓库并提交
+初始化一个git仓库，使用git init
 添加文件到git仓库，分两步：
     1.使用git add <file>,注意，可反复多次使用，添加多个文件；（实际就是将工作区中的内容提交到版本库中的暂存区）
     2.使用git commit -m <message>，完成提交。（将暂存区中的内容提交到当前分支）
@@ -7,7 +12,14 @@
 版本库（Repository）:1.stage（暂存区）  2.master（Git为我们自动创建的分支）
 
 
-
+#版本穿梭
 HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用git reset --hard commit_id.
 穿梭前，使用git log可以查看提交历史，以便确定要回退到哪个版本。
 要重返未来，用git reflog查看命令历史，以便确定回到未来的哪个版本。
+
+
+#关联远程库：
+	使用命令git remote add origin git@server-name:path/repo-name.git;
+	关联后，使用命令git push -u origin master第一次推送master分支所有内容；
+	此后，每次本地提交后，只要有必要，就可以使用命令git push origin mater推送最新修改；
+

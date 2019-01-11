@@ -38,3 +38,21 @@ HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历�
 	关联后，使用命令git push -u origin master第一次推送master分支所有内容；
 	此后，每次本地提交后，只要有必要，就可以使用命令git push origin mater推送最新修改；
 
+
+
+#Problem
+	问题1：git push 失败 
+		! [rejected]        master -> master (fetch first)
+		error: failed to push some refs to 'https://github.com/13etterrnan/learnnote.git'
+		hint: Updates were rejected because the remote contains work that you do
+		hint: not have locally. This is usually caused by another repository pushing
+		hint: to the same ref. You may want to first integrate the remote changes
+		hint: (e.g., 'git pull ...') before pushing again.
+		hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+	解决方案： 从提示可以看出，是由于两者不同步，因此需要先pull，进行合并然后在进行push，
+			因此先使用：
+						git pull --rebase origin master
+			将远程文件同步下来。
+			然后再执行推送：
+						git push -u origin master
+

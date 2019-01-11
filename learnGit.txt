@@ -1,0 +1,9 @@
+﻿初始化一个git仓库，使用git init
+添加文件到git仓库，分两步：
+    1.使用git add <file>,注意，可反复多次使用，添加多个文件；
+    2.使用git commit -m <message>，完成提交。
+
+
+HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用git reset --hard commit_id.
+穿梭前，使用git log可以查看提交历史，以便确定要回退到哪个版本。
+要重返未来，用git reflog查看命令历史，以便确定回到未来的哪个版本。

@@ -1,7 +1,11 @@
 ﻿初始化一个git仓库，使用git init
 添加文件到git仓库，分两步：
-    1.使用git add <file>,注意，可反复多次使用，添加多个文件；
-    2.使用git commit -m <message>，完成提交。
+    1.使用git add <file>,注意，可反复多次使用，添加多个文件；（实际就是将工作区中的内容提交到版本库中的暂存区）
+    2.使用git commit -m <message>，完成提交。（将暂存区中的内容提交到当前分支）
+
+工作区（Working Directory）：相当于某文件夹
+版本库（Repository）:1.stage（暂存区）  2.master（Git为我们自动创建的分支）
+
 
 
 HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用git reset --hard commit_id.
